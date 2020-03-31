@@ -79,14 +79,5 @@ hide_menu_style = """
         <style>
         #MainMenu {visibility: hidden;}
         </style>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-20035972-41"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-20035972-41');
-        </script>
         """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
