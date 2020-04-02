@@ -2,10 +2,11 @@ FROM python:3.8.2
 
 WORKDIR /opt/covidcyl
 
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+COPY poetry.lock .
+COPY pyproject.toml .
+RUN pip install poetry
+RUN poetry install --no-root
 
 COPY app.py .
-COPY coronavirus.csv .
 
-CMD ["streamlit", "run", "app.py"]
+CMD ["poetry", "run", "streamlit", "run", "app.py"]
